@@ -1,0 +1,54 @@
+prices={'USD':500,'AAPL':600}
+
+class portfolio:
+    def __init__(self):
+        self.__balance={}
+        
+    def invest(self,sym,qty):
+        self.__balance[sym]=self.getbalance(sym)+qty
+        
+    def divest(self,sym,qty):
+        self.__balance[sym]=self.getbalance(sym)-qty
+   
+    def getbalance(self,sym):
+        if sym not in self.__balance:
+            return 0
+        return self.__balance[sym]
+    def value(self):
+        total=0
+        for k,v in self.__balance.items():
+            total+=v*prices[k]
+        return total
+        p=portfolio()
+p.invest('USD',5)
+        for k,v in self.__balance.items():
+p.getbalance('USD')
+p.invest('AAPL',10)
+p.getbalance('AAPL')
+p.value()
+q=portfolio()
+q.invest('USD',10)
+r=portfolio()
+r.invest('USD',20)
+plist=[p,q,r]
+def pophighest(plist):
+    
+    pvalues=[]
+    index=0
+    maxi=0
+    maxindex=-1
+    for item in plist:
+        currentvalue=item.value()
+        pvalues.append(currentvalue)
+        if currentvalue>maxi:
+            maxi=currentvalue
+            maxindex=index
+        index+=1
+        return plist.pop(maxindex)
+        pvalues
+        maxvalueportfolio=pophighest(plist)
+        maxvalueportfolio.value()
+        maxvalueportfolio=pophighest(plist)
+        maxvalueportfolio.value()
+        plist
+        USDresults.content
